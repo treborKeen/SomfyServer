@@ -1,14 +1,14 @@
 body {
-    background-color: lightblue;
+    background-color: lightgreen;
 }
 
 h1 {
     color: navy;
-    margin-left: 20px;
+    margin-left: 10px;
 }
 
 button {
-	color:green;
+	color:blue;
 }
 
 #rooms {
