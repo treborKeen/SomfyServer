@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+    
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width initial-scale=1.5, user-scalable=yes">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+        <title>BeagleBone Black AH66</title>
+        <link rel="stylesheet" type="text/css" href="./public/css/styles.css">
+        <link rel="icon"  type="image/x-icon" href="./public/images/favicon.ico" />
+        <script src="/socket.io/socket.io.js"></script>
+        <script src="./public/js/zoneControl.js"> </script>
+      
+    </head>
+    
+    <body>
+        <!-- Home -->
+        ----Zone Detail----
+            </div>
+                <div>
+                    <select id="zone" name="zone" value = currentZone  onChange="updateZone(value);">
+                        <option value="1">Master Bed</option>
+                        <option value="2">Master Bath</option>
+                        <option value="3">Kitchen</option>
+                        <option value="4">Deck</option>
+                        <option value="5">Front Porch</option>
+                        <option value="6">Workshop</option>
+                    </select>         	
+                    <input id="slider"  type="range" value=0 min="0" max="100"   onInput="zvol(value);" />
+                    
+                    
+                </div>
+                
+                
+                <div>	
+                    <select id="selectAudio" name="selectAudio"  onChange="zoneSelect(value);">
+                        <option value="A0">Off</option>
+                        <option value="R1">Radio</option>
+                        <option value="A1">Airplay</option>
+                        <option value="A2">Sirius</option>
+                        <option value="A3">Denon</option>
+                        <option value="A4">Marantz</option>
+                    </select>
+                    
+                    <select id="tuner1" name="tuner1"  onChange="tune('R1',value);">
+                        <option value="9550">95.5</option>
+                        <option value="9630">96.3</option>
+                        <option value="9950">99.5</option>
+                        <option value="10110">101.1</option>
+                        <option value="10190">101.9</option>
+                        <option value="10230">102.3</option>
+                        <option value="10350">103.5</option>
+                        <option value="10430">104.3</option>
+                        
+                    </select>
+                    <label for="tuner1">Tuner1</label>
+                
+                </div>
+                
+                <div>	
+                    <input id="trebelSlider"  type="range" value=0 min="-12" max="12"   onInput="trebelSelect(value);" />
+                    <label for="trebelSlider">Trebel</label>
+                    </div>
+                <div>
+                     <input id="bassSlider"  type="range" value=0 min="-12" max="12"   onInput="bassSelect(value);" />
+                     <label for="bassSlider">Bass</label>
+                    
+                </div>
+                <div >
+                    <select id="page" name="page"  onChange="page(value);">
+                        <option value="0">Off</option>
+                        <option value="1">On</option>
+                    </select>
+                    <label for="page">DoorBell</label>
+                    
+                   
+                    <button id="sysOff" name="sysOff"  onclick="sysOff()">ALL OFF</button>
+                <button onclick="window.location.href='/'">Main</button>
+                </div>
+    </body>
+
+</html>
