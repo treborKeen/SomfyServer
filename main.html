@@ -6,7 +6,7 @@
         <meta name="viewport" content="width=device-width initial-scale=1.5, user-scalable=yes">
         <meta name="apple-mobile-web-app-capable" content="yes">
         <meta name="apple-mobile-web-app-status-bar-style" content="black">
-        <title>BeagleBone Black AH66</title>
+        <title>BeagleBone Black Somfy</title>
         <link rel="stylesheet" type="text/css" href="./public/css/styles.css">
         <link rel="icon"  type="image/x-icon" href="./public/images/favicon.ico" />
         <script src="/socket.io/socket.io.js"></script>
@@ -16,32 +16,17 @@
     
     <body>
         <!-- Home -->
+            <div>
+            Somfy Shade Controls
             </div>
-                
-               
-                <div >
-                    <select id="page2" name="page2"  onChange="page2('16',value);">
-                        <option value="D">down</option>
-                        <option value="U">up</option>
-                        <option value="S">my</option>
-                    </select>
-                    <label for="page2">Great Room</label>
-                
+            <div>
+                   <button onclick="window.location.href='/greatRm'">GreatRm</button>
+                   <button onclick="window.location.href='/mBed'">Master Bedroom</button>
                 </div>
                 
-                <div >
-                    <select id="page" name="page"  onChange="page(value);">
-                        <option value="16D">down</option>
-                        <option value="16U">up</option>
-                        <option value="16S">my</option>
-                    </select>
-                    <label for="page">Great Room</label>
-                    
-                   
-                    <button id="allDown" name="allDown"  onclick="allDown()">ALL Down</button>
-                   
-                   <button onclick="window.location.href='/zone'">Zone Detail</button>
-                </div>
+                <button id="allDown" name="allDown"  onclick="updateAll('D')">All Down</button>
+                <button id="allUp" name="allUp"  onclick="updateAll('U')">All Up</button>
+                <button id="allStop" name="allStop"  onclick="updateAll('S')">All Stop/Close</button>
     </body>
 
 </html>

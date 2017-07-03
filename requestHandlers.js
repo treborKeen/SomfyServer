@@ -51,15 +51,16 @@ function main(response, postData){
   });
 }
 
-function zone(response, postData){
-    console.log("Request handler 'zone' was called.");
-    fs.readFile(__dirname +'/zone.html',    // load html file
+
+function greatRm(response, postData){
+    console.log("Request handler 'greatRm' was called.");
+    fs.readFile(__dirname +'/greatRm.html',    // load html file
 
   function (err, data) {
 
     if (err) {
       response.writeHead(500);
-      return response.end('Error loading zone.html');
+      return response.end('Error loading greatRm.html');
     }
     response.writeHead(200);
     //response.write(data);
@@ -67,6 +68,23 @@ function zone(response, postData){
 
   });
 }
+function mBed(response, postData){
+    console.log("Request handler 'greatRm' was called.");
+    fs.readFile(__dirname +'/mBed.html',    // load html file
+
+  function (err, data) {
+
+    if (err) {
+      response.writeHead(500);
+      return response.end('Error loading mBed.html');
+    }
+    response.writeHead(200);
+    //response.write(data);
+    response.end(data);
+
+  });
+}
+
 
 function styles(response, postData){
     console.log("Request handler 'styles' was called.");
@@ -87,15 +105,7 @@ function control(response, postData){
         response.end();
     });
 } 
-function zoneControl(response, postData){
-    console.log("Request handler 'zone control' was called.");
-    fs.readFile(__dirname + '/public/js/zoneControl.js',function(err,data){
-        if(err) console.log(err);
-        response.writeHead(200,{"Content-Type":"text/javascript"});
-        response.write(data);
-        response.end();
-    });
-} 
+
 
 function favicon(response, postData){
     console.log("Request handler 'favicon' was called.");
@@ -120,8 +130,8 @@ function touchicon(response, postData){
 exports.start=start;
 exports.upload=upload;
 exports.main=main;
-exports.zone=zone;
+exports.greatRm=greatRm;
+exports.mBed=mBed;
 exports.styles=styles;
 exports.control=control;
-exports.zoneControl=zoneControl;
 exports.favicon=favicon;

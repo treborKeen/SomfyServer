@@ -21,72 +21,21 @@ io = require('socket.io').listen(ser);
  })
  
  io.sockets.on('connection', function (socket) {
-
-    
-  socket.on('zvol', function (zone, data) {
-
-    console.log('zone: '+zone+'  level: '+data);
-    sp.write("&AH66,VOL,"+zone+','+data+"\r");
-  });
-  
-  
-  socket.on('zoneSelect', function(zone, data) {
-  
-    console.log("Audio for: " + zone + ' with value ' + data);
-    if (data[0] == 'R') {
-      sp.write("&AH66,AUD," + zone + ',' + data + "\r");
-    }
-    else {
-      sp.write("&AH66,AUD," + zone + ',' + data.substring(1) + "\r");
-    }
-  
-  });
-  socket.on('trebelSelect', function(zone, data) {
-  
-    console.log("Trebel for: " + zone + ' with value ' + data);
-     if(data >0)
-      sp.write("&AH66,TRE," + zone  + ',' + '+' + ','+Math.abs(data)+"\r");
-    else if(data < 0)
-      sp.write("&AH66,TRE," + zone  + ',' + '-' + ','+Math.abs(data)+"\r");
-    else
-      sp.write("&AH66,TRE," + zone  + ',' + ','+data+"\r");
-    
-  
-  });
-  socket.on('bassSelect', function(zone, data) {
-  
-    console.log("Bass for: " + zone + ' with value ' + data);
-    if(data >0)
-      sp.write("&AH66,BAS," + zone  + ',' + '+' + ','+Math.abs(data)+"\r");
-    else if(data < 0)
-      sp.write("&AH66,BAS," + zone  + ',' + '-' + ','+Math.abs(data)+"\r");
-    else
-      sp.write("&AH66,BAS," + zone  + ',' + ','+data+"\r");
-  });
-  
-  socket.on('updateZone', function (data) {
  
-    console.log('zone selected: '+data);
-    sp.write('&AH66,ZQRY,'+data+',?\r');
-    
- });
- 
-  socket.on('page', function (data) {
-
-    console.log("Page: "+' with value '+ data);
-    sp.write("01"+data+"\r");
-  });
   
-  socket.on('page2', function (zone, data) {
+  socket.on('update', function (zone, data) {
 
-    console.log("page: "+ zone+' with value '+ data);
+    console.log("update: "+ zone+' with value '+ data);
     sp.write('01'+zone+data+"\r");
   });
   
-  socket.on('allDown', function () {
+  socket.on('updateAll', function (data) {
 
-    console.log("All Down");
-    sp.write('0116D\r');
+    console.log("update all called"+data);
+    sp.write('0116'+data+'\r');
+    //setTimeout(function() {
+    sp.write('0110'+data+'\r');
+    //}, 2000 );
   });
 
 });//end io.socket.on

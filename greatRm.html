@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width initial-scale=1.5, user-scalable=yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <title>BeagleBone Black AH66</title>
+    <link rel="stylesheet" type="text/css" href="./public/css/styles.css">
+    <link rel="icon" type="image/x-icon" href="./public/images/favicon.ico" />
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="./public/js/control.js">
+    </script>
+
+</head>
+
+<body>
+    <!-- Home -->
+
+    Great Room
+    <div>
+        <button id="allUp" name="allUp" onclick="update('16','U')">All Up</button>
+        <button id="allDown" name="allDown" onclick="update('16','D')">All Down</button>
+        <button id="allStop" name="allStop" onclick="update('16','S')">All Stop/Close</button>
+    </div>
+
+    South Window
+    <div>
+        <button onclick="update('01','U')">Up</button>
+        <button onclick="update('01','D')">Down</button>
+        <button onclick="update('01','S')">Stop/Close</button>
+    </div>
+
+    Middle Window
+    <div>
+        <button onclick="update('02','U')">Up</button>
+        <button onclick="update('02','D')">Down</button>
+        <button onclick="update('02','S')">Stop/Close</button>
+    </div>
+
+    North Window
+    <div>
+        <button onclick="update('03','U')">Up</button>
+        <button onclick="update('03','D')">Down</button>
+        <button onclick="update('03','S')">Stop/Close</button>
+    </div>
+
+    <button onclick="window.location.href='/'">Rooms</button>
+</body>
+
+</html>

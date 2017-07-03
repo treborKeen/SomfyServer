@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+    
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width initial-scale=1.5, user-scalable=yes">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+        <title>BeagleBone Black AH66</title>
+        <link rel="stylesheet" type="text/css" href="./public/css/styles.css">
+        <link rel="icon"  type="image/x-icon" href="./public/images/favicon.ico" />
+        <script src="/socket.io/socket.io.js"></script>
+        <script src="./public/js/control.js"> </script>
+      
+    </head>
+    
+    <body>
+        <!-- Home -->
+            
+                   Master Bedroom
+                   <div>
+                    <button id="allUp" name="allUp"  onclick="update('10','U')">ALL Up</button>
+                    <button id="allDown" name="allDown"  onclick="update('10','D')">ALL Down</button>
+                    <button id="allStop" name="allStop"  onclick="update('10','S')">ALL Stop/Close</button>
+                   </div>
+                   Bob's Window
+                   <div>
+                    <button onclick="update('11','U')">Up</button>
+                    <button onclick="update('11','D')">Down</button>
+                    <button onclick="update('11','S')">Stop/Close</button>
+                   </div>
+                  Michelle's Window
+                   <div>
+                    <button onclick="update('12','U')">Up</button>
+                    <button onclick="update('12','D')">Down</button>
+                    <button onclick="update('12','S')">Stop/Close</button>
+                   </div>
+                   NE Window
+                   <div>
+                    <button onclick="update('13','U')">Up</button>
+                    <button onclick="update('13','D')">Down</button>
+                    <button onclick="update('13','S')">Stop/Close</button>
+                   </div>
+                   NW Window
+                   <div>
+                    <button onclick="update('14','U')">Up</button>
+                    <button onclick="update('14','D')">Down</button>
+                    <button onclick="update('14','S')">Stop/Close</button>
+                   </div>
+                <button onclick="window.location.href='/'">Rooms</button>
+    </body>
+
+</html>

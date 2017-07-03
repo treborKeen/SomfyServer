@@ -6,20 +6,15 @@
             
             // Send data through socket
            
-            function page2(zone, value) {
+            function update(zone, value) {
                 //console.log('emitting' + tuner + value)
 
-                socket.emit('page2', zone, value);
+                socket.emit('update', zone, value);
             }
 
-            function page(value) {
-
-                socket.emit('page', value);
-
-            }
-
-            function allDown() {
+            
+            function updateAll(data) {
                 //console.log('all down pressed')
-                socket.emit('allDown');
+                socket.emit('updateAll',data);
 
             }
