@@ -125,6 +125,16 @@ function touchicon(response, postData){
         response.write(data);
         response.end();
     });
+}
+
+function svgfavicon(response, postData){
+    console.log("Request handler 'svgfavicon' was called.");
+    fs.readFile(__dirname + '/public/images/favicon.svg',function(err,data){
+        if(err) console.log(err);
+        response.writeHead(200,{"Content-Type":"image/svg"});
+        response.write(data);
+        response.end();
+    });
 } 
 
 exports.start=start;
@@ -136,3 +146,4 @@ exports.styles=styles;
 exports.control=control;
 exports.favicon=favicon;
 exports.touchicon=touchicon;
+exports.svgfavicon=svgfavicon;

@@ -16,8 +16,9 @@ handle["/public/css/styles.css"]=requestHandlers.styles;
 handle["/public/js/control.js"]=requestHandlers.control;
 handle["/public/images/favicon.ico"]=requestHandlers.favicon;
 handle["/favicon.ico"]=requestHandlers.favicon;
-handle["/apple-touch-icon.png"]=requestHandlers.favicon;
+handle["/apple-touch-icon.png"]=requestHandlers.touchicon;
 handle["/apple-touch-icon-120x120.png"]=requestHandlers.touchicon;
+handle["/favicon.svg"]=requestHandlers.svgfavicon;
 
 var serv = server.start(router.route, handle);
 serport.start(serv);
