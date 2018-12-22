@@ -109,7 +109,7 @@ function control(response, postData){
 
 function favicon(response, postData){
     console.log("Request handler 'favicon' was called.");
-    fs.readFile(__dirname + '/public/images/favicon.png',function(err,data){
+    fs.readFile(__dirname + '/public/images/favicon.ico',function(err,data){
         if(err) console.log(err);
         response.writeHead(200,{"Content-Type":"image/ico"});
         response.write(data);

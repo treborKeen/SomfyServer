@@ -1,32 +1,36 @@
 <!DOCTYPE html>
 <html>
-    
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width initial-scale=1.5, user-scalable=yes">
-        <meta name="apple-mobile-web-app-capable" content="yes">
-        <meta name="apple-mobile-web-app-status-bar-style" content="black">
-        <title>BeagleBone Black Somfy</title>
-        <link rel="stylesheet" type="text/css" href="./public/css/styles.css">
-        <link rel="icon"  type="image/x-icon" href="./public/images/favicon.ico" />
-        <script src="/socket.io/socket.io.js"></script>
-        <script src="./public/js/control.js"> </script>
-      
-    </head>
-    
-    <body>
-        <!-- Home -->
-            <h1>
-            BAM Shades
-            </h1>
-            <div>
-                   <button id = rooms onclick="window.location.href='/greatRm'">GreatRm</button>
-                   <button id = rooms onclick="window.location.href='/mBed'">Master Bedroom</button>
-                </div>
-                
-                <button id="allDown" name="allDown"  onclick="updateAll('D')">All Down</button>
-                <button id="allUp" name="allUp"  onclick="updateAll('U')">All Up</button>
-                <button id="allStop" name="allStop"  onclick="updateAll('S')">All Stop/Close</button>
-    </body>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width initial-scale=1.5, user-scalable=yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="Shades">
+    <title>BeagleBone Black Somfy</title>
+    <link rel="stylesheet" type="text/css" href="./public/css/styles.css">
+    <link rel="icon" type="image/x-icon" href="./public/images/favicon.ico">
+    <link rel=" apple-touch-icon " href=".public/images/favicon.png">
+    <link rel="mask-icon" href="/favicon.svg" color="red">
+    <!--<link rel="apple-touch-icon" sizes="120x120" href="./public/images/Icon60@2x.png">-->
+    <script src="/socket.io/socket.io.js "></script>
+    <script src="./public/js/control.js "></script>
+
+</head>
+
+<body>
+    <!-- Home -->
+    <h1>
+        BAM Shades
+    </h1>
+    <div>
+        <button id=r ooms onclick="window.location.href='/greatRm' ">GreatRm</button>
+        <button id=r ooms onclick="window.location.href='/mBed' ">Master Bedroom</button>
+    </div>
+
+    <button id="allDown " name="allDown " onclick="updateAll( 'D') ">All Down</button>
+    <button id="allUp " name="allUp " onclick="updateAll( 'U') ">All Up</button>
+    <button id="allStop " name="allStop " onclick="updateAll( 'S') ">All Stop/Close</button>
+</body>
 
 </html>
